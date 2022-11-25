@@ -1,0 +1,21 @@
+import React, { Component } from "react";
+import Task from "./Task";
+ class TodoList extends Component {
+    constructor(props){
+        super(props);
+
+    }
+    render(){
+        return(
+            <div>
+                {this.props.tasks.map(task => (
+                    <>
+                    <Task id={task.id} name={task.name} key={task.id} completed={task.completed} deleteTask={this.props.deleteTask}/>
+                    
+                    </>
+                ))}
+            </div>
+        )
+    }
+}
+export default TodoList
