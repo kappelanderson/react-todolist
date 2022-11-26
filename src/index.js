@@ -11,6 +11,7 @@ class App extends Component {
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.deleteTask = this.deleteTask.bind(this)
+        this.resubmitTask = this.resubmitTask.bind(this)
 
     }
     handleSubmit(e){
@@ -39,12 +40,22 @@ class App extends Component {
         })
 
     }
+    resubmitTask(id, task){
+        let newArr = this.state.tasks
+        let foundElement = newArr.find(task => task.id === id)
+        newArr[newArr.indexOf(foundElement)].name = task 
+
+        this.setState({
+            tasks: [...newArr]
+        })
+
+    }
     render(){
         return(
             <>
                 <input value={this.state.task} onChange={this.handleChange}/>
                 <button onClick={this.handleSubmit}>Submit Task</button>
-                <TodoList tasks={this.state.tasks} deleteTask={this.deleteTask}/>
+                <TodoList tasks={this.state.tasks} deleteTask={this.deleteTask} resubmitTask={this.resubmitTask}/>
             </>
         )
     }
