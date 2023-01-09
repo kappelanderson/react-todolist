@@ -8,3 +8,5 @@ A simple project that I made only for learn new concepts. A basic to do list.
 - Use State
 - Use Effect
 
+![image](https://user-images.githubusercontent.com/96890436/211419949-f2d979ed-0fce-45a3-8cba-b55248095dbb.png)
+
