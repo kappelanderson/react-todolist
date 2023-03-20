@@ -1,5 +1,7 @@
 # React TODO LIST
-Link: https://react-todo-list-4dst1t0jt-kappelanderson.vercel.app/
+
+#LIVE PREVIEW
+https://react-todolist-roan-phi.vercel.app/
 
 A simple project that I made only for learn new concepts. A basic to do list.
 
