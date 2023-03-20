@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import TodoList from "./TodoList.js"
+import './index.css';
 class App extends Component {
     constructor(props){
         super(props);
         this.state = {
-            tasks: [{name: "Do the homework", id:1, completed: true}, {name: "Make the bed", id:2, completed: false}],
+            tasks: [],
             task: ''
         }
         this.handleChange = this.handleChange.bind(this)
@@ -41,6 +42,7 @@ class App extends Component {
 
     }
     resubmitTask(id, task){
+        if(task == "") return
         let newArr = this.state.tasks
         let foundElement = newArr.find(task => task.id === id)
         newArr[newArr.indexOf(foundElement)].name = task 
@@ -52,11 +54,15 @@ class App extends Component {
     }
     render(){
         return(
-            <>
-                <input value={this.state.task} onChange={this.handleChange}/>
-                <button onClick={this.handleSubmit}>Submit Task</button>
-                <TodoList tasks={this.state.tasks} deleteTask={this.deleteTask} resubmitTask={this.resubmitTask}/>
-            </>
+
+            <div id="layout">
+                <h1>Todo List</h1>
+                <div id="box">
+                    <input value={this.state.task} onChange={this.handleChange}/>
+                    <button onClick={this.handleSubmit}>Submit Task</button>
+                    <TodoList tasks={this.state.tasks} deleteTask={this.deleteTask} resubmitTask={this.resubmitTask}/>
+                </div>
+            </div>
         )
     }
 }

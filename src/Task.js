@@ -38,11 +38,15 @@ import React, { Component } from "react";
     }
     render(){
         return(
-            <div>
-                <p>{this.props.name}</p>
+            <div className="task">
+                <div>
                 {this.props.completed === true ? <input type="checkbox" id={this.props.id} checked
                 /> : <input type="checkbox" id={this.props.id}/>}
+                <p>{this.props.name}</p>
+                </div>
+                <div>
                 <button onClick={this.handleDelete}>Delete</button>{this.state.edit === true ? <><input type={"text"} onChange={this.handleChange}/> <button onClick={this.handleResubmit}>Resubmit</button></> : <button onClick={this.handleEdit}>Edit</button>}
+                </div>
             </div>
         )
     }
